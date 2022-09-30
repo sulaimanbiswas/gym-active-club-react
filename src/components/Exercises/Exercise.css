@@ -1,0 +1,19 @@
+.exercise {
+  padding: 50px 150px;
+}
+.logo {
+  text-transform: uppercase;
+  color: lightseagreen;
+  font-size: 30px;
+}
+.exercise-title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.gyms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}

@@ -1,0 +1,13 @@
+.activities {
+  background-color: #fff;
+  padding: 20px;
+}
+.activities .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.activities .user-profile img {
+  width: 50px;
+  height: 50px;
+}
