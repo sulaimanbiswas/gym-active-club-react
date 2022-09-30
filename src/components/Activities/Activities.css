@@ -1,6 +1,11 @@
 .activities {
   background-color: #fff;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: fixed;
+  top: 0;
 }
 .activities .user-profile {
   display: flex;
@@ -10,4 +15,44 @@
 .activities .user-profile img {
   width: 50px;
   height: 50px;
+}
+.activities .user-details {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.activities .user-details span {
+  font-weight: 400;
+  font-size: 15px;
+}
+.activities .user-details button {
+  height: 50px;
+  width: 50px;
+  font-size: 18px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: lightseagreen;
+  border: 0;
+  color: #fff;
+  transition: all linear 0.3s;
+  -webkit-transition: all linear 0.3s;
+  -moz-transition: all linear 0.3s;
+  -ms-transition: all linear 0.3s;
+  -o-transition: all linear 0.3s;
+}
+.activities .user-details button:hover {
+  background-color: seagreen;
+}
+.activities .add-to-list {
+  padding: 20px;
 }

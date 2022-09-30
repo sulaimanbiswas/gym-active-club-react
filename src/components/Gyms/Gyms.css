@@ -18,7 +18,7 @@
   opacity: 0.8;
 }
 
-.gym .add-to-list {
+.add-to-list {
   padding: 10px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -35,6 +35,6 @@
   -o-transition: all linear 0.3s;
   cursor: pointer;
 }
-.gym .add-to-list:hover {
+.add-to-list:hover {
   background-color: seagreen;
 }
