@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  position: fixed;
+  position: sticky;
   top: 0;
 }
 .activities .user-profile {
@@ -55,4 +55,5 @@
 }
 .activities .add-to-list {
   padding: 20px;
+  font-size: 20px;
 }

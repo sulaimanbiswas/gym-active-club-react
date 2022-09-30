@@ -11,10 +11,13 @@ function App() {
       .then((data) => setExercise(data));
   }, []);
 
-  
+  const AddToList = (id) => {
+    console.log(exercise, id);
+  };
+
   return (
     <div className="App">
-      <Exercise exercise={exercise}></Exercise>
+      <Exercise exercise={exercise} AddToList={AddToList}></Exercise>
       <Activities></Activities>
     </div>
   );

@@ -46,11 +46,11 @@ const Activities = () => {
         <h2>Exercise Details</h2>
       </div>
       <div className="user-details">
-        <h2>Exercise time</h2>
+        <h2>Exercise Time</h2>
         <p>10 seconds</p>
       </div>
       <div className="user-details">
-        <h2>Break time</h2>
+        <h2>Break Time</h2>
         <p>10 seconds</p>
       </div>
       <button className="add-to-list">Activity Completed</button>

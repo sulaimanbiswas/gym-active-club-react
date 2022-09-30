@@ -2,7 +2,7 @@ import React from "react";
 import "./Gyms.css";
 
 const Gyms = (props) => {
-  const { gym } = props;
+  const { gym, AddToList } = props;
   return (
     <div className="gym">
       <img src={gym.image} alt="" />
@@ -12,7 +12,9 @@ const Gyms = (props) => {
       </p>
       <p>For Age: {gym.age}</p>
       <p>Time required: {gym.time} </p>
-      <button className="add-to-list">Add to list</button>
+      <button className="add-to-list" onClick={() => AddToList(gym.id)}>
+        Add to list
+      </button>
     </div>
   );
 };
