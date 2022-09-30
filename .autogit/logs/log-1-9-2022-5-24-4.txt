@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+Sat Oct 01 2022 05:24:04 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/App.js
+* src/components/Activities/Activities.js
+* src/components/Gyms/Gyms.js
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
