@@ -5,20 +5,22 @@ import Exercise from "./components/Exercises/Exercise";
 
 function App() {
   const [exercise, setExercise] = useState([]);
+  const [exerciseTime, setExerciseTime] = useState(0);
+
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
       .then((data) => setExercise(data));
   }, []);
 
-  const AddToList = (id) => {
-    console.log(exercise, id);
+  const AddToList = (time) => {
+    setExerciseTime(exerciseTime + time);
   };
 
   return (
     <div className="App">
       <Exercise exercise={exercise} AddToList={AddToList}></Exercise>
-      <Activities></Activities>
+      <Activities exerciseTime={exerciseTime}></Activities>
     </div>
   );
 }

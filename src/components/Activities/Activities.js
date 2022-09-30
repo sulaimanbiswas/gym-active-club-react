@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../image/profile-user.png";
 import "./Activities.css";
 
-const Activities = () => {
+const Activities = (props) => {
+  const { exerciseTime } = props;
+  const [breakTime, setBreakTime] = useState(0);
+
+  const breakTimeFun = (time) => {
+    setBreakTime(time);
+  };
+
   return (
     <div className="activities">
       <div className="user-profile">
@@ -35,11 +42,11 @@ const Activities = () => {
         <h2>Add A Break</h2>
       </div>
       <div className="user-details">
-        <button>10s</button>
-        <button>20s</button>
-        <button>30s</button>
-        <button>40s</button>
-        <button>50s</button>
+        <button onClick={() => breakTimeFun(10)}>10s</button>
+        <button onClick={() => breakTimeFun(20)}>20s</button>
+        <button onClick={() => breakTimeFun(30)}>30s</button>
+        <button onClick={() => breakTimeFun(40)}>40s</button>
+        <button onClick={() => breakTimeFun(50)}>50s</button>
       </div>
 
       <div className="user-profile">
@@ -47,11 +54,11 @@ const Activities = () => {
       </div>
       <div className="user-details">
         <h2>Exercise Time</h2>
-        <p>10 seconds</p>
+        <p>{exerciseTime} seconds</p>
       </div>
       <div className="user-details">
         <h2>Break Time</h2>
-        <p>10 seconds</p>
+        <p>{breakTime} seconds</p>
       </div>
       <button className="add-to-list">Activity Completed</button>
     </div>
