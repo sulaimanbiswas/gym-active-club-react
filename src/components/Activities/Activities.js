@@ -8,7 +8,10 @@ const Activities = (props) => {
 
   const breakTimeFun = (time) => {
     setBreakTime(time);
+    localStorage.setItem("BreakTime", JSON.stringify(time));
   };
+
+  const 
 
   return (
     <div className="activities">
