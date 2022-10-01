@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Activities from "./components/Activities/Activities";
 import Exercise from "./components/Exercises/Exercise";
-import { setLocalStorage } from "./utilities/localStorage";
 
 function App() {
   const [exercise, setExercise] = useState([]);
@@ -21,7 +20,7 @@ function App() {
     const listSelectedItem = [...list, selectedItem];
     setList(listSelectedItem);
 
-    setLocalStorage(id);
+    localStorage.setItem("ExerciseTime", JSON.stringify(exerciseTime));
   };
 
   useEffect(() => {
@@ -31,6 +30,13 @@ function App() {
     }
     setExerciseTime(exerciseTime);
   }, [list]);
+
+  // useEffect(() => {
+  //   const restoredExerciseTime = JSON.parse(
+  //     localStorage.getItem("ExerciseTime")
+  //   );
+  //   setExerciseTime(restoredExerciseTime);
+  // }, [exerciseTime]);
 
   return (
     <div className="App">

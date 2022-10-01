@@ -13,7 +13,16 @@ const setLocalStorage = (id) => {
     listItem[id] = 1;
   }
 
-  console.log(listItem);
+  localStorage.setItem("List", JSON.stringify(listItem));
 };
 
-export { setLocalStorage };
+const getLocalStorage = () => {
+  let listItem = {};
+  const storedList = localStorage.getItem("list-item");
+  if (storedList) {
+    listItem = JSON.parse(storedList);
+    return listItem;
+  }
+};
+
+export { setLocalStorage, getLocalStorage };
