@@ -38,8 +38,6 @@ function App() {
       const storedItem = exercise.find((exercises) => exercises.id === id);
       restoredLists.push(storedItem);
     }
-    const listStored
-    
   }, [exercise]);
 
   return (
