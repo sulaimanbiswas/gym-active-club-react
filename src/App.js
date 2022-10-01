@@ -19,7 +19,6 @@ function App() {
 
     const listSelectedItem = [...list, selectedItem];
     setList(listSelectedItem);
-
     localStorage.setItem("ExerciseTime", JSON.stringify(exerciseTime));
   };
 
@@ -31,12 +30,12 @@ function App() {
     setExerciseTime(exerciseTime);
   }, [list]);
 
-  // useEffect(() => {
-  //   const restoredExerciseTime = JSON.parse(
-  //     localStorage.getItem("ExerciseTime")
-  //   );
-  //   setExerciseTime(restoredExerciseTime);
-  // }, [exerciseTime]);
+  useEffect(() => {
+    const restoredExerciseTime = JSON.parse(
+      localStorage.getItem("ExerciseTime")
+    );
+    setExerciseTime(restoredExerciseTime);
+  }, []);
 
   return (
     <div className="App">
