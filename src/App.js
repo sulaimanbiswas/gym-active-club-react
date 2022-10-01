@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Activities from "./components/Activities/Activities";
 import Exercise from "./components/Exercises/Exercise";
+import { addToLocalStorage, getStoredList } from "./utilities/localStorage";
 
 function App() {
   const [exercise, setExercise] = useState([]);
@@ -19,7 +20,7 @@ function App() {
 
     const listSelectedItem = [...list, selectedItem];
     setList(listSelectedItem);
-    localStorage.setItem("ExerciseTime", JSON.stringify(exerciseTime));
+    addToLocalStorage(id);
   };
 
   useEffect(() => {
@@ -31,11 +32,14 @@ function App() {
   }, [list]);
 
   useEffect(() => {
-    const restoredExerciseTime = JSON.parse(
-      localStorage.getItem("ExerciseTime")
-    );
-    setExerciseTime(restoredExerciseTime);
-  }, []);
+    const restoredList = getStoredList();
+    const restoredLists = [];
+    for (const id in restoredList) {
+      const storedItem = exercise.find((exercises) => exercises.id === id);
+      restoredLists.push(storedItem);
+      console.log(storedItem);
+    }
+  }, [exercise]);
 
   return (
     <div className="App">

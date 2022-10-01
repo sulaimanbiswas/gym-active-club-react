@@ -1,4 +1,4 @@
-const setLocalStorage = (id) => {
+const addToLocalStorage = (id) => {
   let listItem = {};
 
   const storedList = localStorage.getItem("list-item");
@@ -12,17 +12,36 @@ const setLocalStorage = (id) => {
   } else {
     listItem[id] = 1;
   }
-
-  localStorage.setItem("List", JSON.stringify(listItem));
+  localStorage.setItem("list-item", JSON.stringify(listItem));
 };
 
-const getLocalStorage = () => {
+const getStoredList = () => {
   let listItem = {};
-  const storedList = localStorage.getItem("list-item");
-  if (storedList) {
-    listItem = JSON.parse(storedList);
+  const storedCart = localStorage.getItem("list-item");
+  if (storedCart) {
+    listItem = JSON.parse(storedCart);
     return listItem;
   }
 };
 
-export { setLocalStorage, getLocalStorage };
+const removeFromLocalStorage = (id) => {
+  const storedCart = localStorage.getItem("list-item");
+  const listItem = JSON.parse(storedCart);
+  if (storedCart) {
+    if (id in listItem) {
+      delete listItem[id];
+      localStorage.setItem("list-item", JSON.stringify(listItem));
+    }
+  }
+};
+
+const deleteFromLocalStorage = () => {
+  localStorage.removeItem("list-item");
+};
+
+export {
+  addToLocalStorage,
+  getStoredList,
+  removeFromLocalStorage,
+  deleteFromLocalStorage,
+};
