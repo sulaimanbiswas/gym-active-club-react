@@ -5,7 +5,7 @@ import Exercise from "./components/Exercises/Exercise";
 
 function App() {
   const [exercise, setExercise] = useState([]);
-  const [exerciseTime, setExerciseTime] = useState(0);
+  const [list, setList] = useState([]);
 
   useEffect(() => {
     fetch("data.json")
@@ -13,14 +13,14 @@ function App() {
       .then((data) => setExercise(data));
   }, []);
 
-  const AddToList = (time) => {
-    setExerciseTime(exerciseTime + time);
+  const AddToList = (id) => {
+    set
   };
 
   return (
     <div className="App">
       <Exercise exercise={exercise} AddToList={AddToList}></Exercise>
-      <Activities exerciseTime={exerciseTime}></Activities>
+      <Activities exerciseTime={"Hello"}></Activities>
     </div>
   );
 }

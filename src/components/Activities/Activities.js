@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../image/profile-user.png";
 import "./Activities.css";
 
@@ -11,7 +11,10 @@ const Activities = (props) => {
     localStorage.setItem("BreakTime", JSON.stringify(time));
   };
 
-  const 
+  useEffect(() => {
+    const restoredBreakTime = JSON.parse(localStorage.getItem("BreakTime"));
+    setBreakTime(restoredBreakTime);
+  }, []);
 
   return (
     <div className="activities">
