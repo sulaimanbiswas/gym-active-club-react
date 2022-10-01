@@ -14,17 +14,22 @@ function App() {
       .then((data) => setExercise(data));
   }, []);
 
-  const AddToList = (time, id) => {
-    setExerciseTime(exerciseTime + time);
-
+  const AddToList = (id) => {
     const selectedItem = exercise.find((exercises) => exercises.id === id);
     console.log(selectedItem);
 
-    
-    // setList(...list, selectedItem);
+    const listSelectedItem = [...list, selectedItem];
+    setList(listSelectedItem);
   };
 
-  // console.log(list);
+  useEffect(() => {
+    let exerciseTime = 0;
+    for (const exerciseTimes of list) {
+      exerciseTime = exerciseTime + exerciseTimes.time;
+    }
+    setExerciseTime(exerciseTime);
+    setLocalStorage();
+  }, [list]);
 
   return (
     <div className="App">

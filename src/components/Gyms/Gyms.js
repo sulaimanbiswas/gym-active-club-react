@@ -14,7 +14,7 @@ const Gyms = (props) => {
       <p>Time required: {gym.time} </p>
       <button
         className="add-to-list"
-        onClick={() => AddToList(gym.time, gym.id)}
+        onClick={() => AddToList(gym.id)}
       >
         Add to list
       </button>
